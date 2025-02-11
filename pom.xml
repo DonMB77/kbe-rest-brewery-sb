@@ -94,6 +94,26 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.45.0</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                        <image>kbe-rest</image>
+                        <build>
+                            <assembly>
+                                <descriporRef>artifact</descriporRef>
+                            </assembly>
+                            <dockerFile>Dockerfile</dockerFile>
+                            <tags>
+                                <tag>latest</tag>
+                            </tags>
+                        </build>
+                    </images>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
